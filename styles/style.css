@@ -1,0 +1,52 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+}
+
+h1 {
+    font-weight: bold;
+
+}
+
+.subtitle {
+    color: aqua;
+
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Space between grid items */
+
+    background-color: #f9f9f9;
+    padding: 40px;
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.collapsible-section {
+    margin: 20px 0;
+}
+
+.toggle-button {
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.content {
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for the content */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above the content */
+}
+

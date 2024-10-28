@@ -50,3 +50,141 @@ section {
     margin-top: 10px; /* Space above the content */
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+}
+
+.project-item h3 {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+header {
+    background-color: #333; /* Slightly lighter header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #4CAF50; /* Green links */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #2a2a2a; /* Darker section background */
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    margin-top: 10px;
+    color: #e0e0e0; /* Light label color */
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background-color: #2a2a2a; /* Dark background for project items */
+    border: 1px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.project-item img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.project-item h3 {
+    padding: 10px;
+    font-size: 1.2

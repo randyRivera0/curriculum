@@ -13,49 +13,6 @@ h1 {
     font-weight: bold;
 }
 
-.subtitle {
-    color: blue; /* Updated from aqua to blue */
-}
-
-header, footer {
-    background-color: #333; /* Header and footer background */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Flexbox for horizontal layout */
-    gap: 20px; /* Space between items */
-    margin: 0; /* Reset margin */
-}
-
-nav li {
-    display: inline;
-}
-
-nav a {
-    color: #fff; /* White links */
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 10px; /* Space between grid items */
-    background-color: #2a2a2a; /* Darker section background */
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -84,17 +41,6 @@ section {
 .project-item h3 {
     padding: 10px;
     font-size: 1.2em;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-form label {
-    margin-top: 10px;
-    color: #e0e0e0; /* Light label color */
 }
 
 input[type="text"],
@@ -138,7 +84,10 @@ img {
 }
 
 .sticky-header {
-    display: flex; /* Enable Flexbox */
+    display: grid; /* Enable Flexbox */
+    grid-template-columns: auto 1fr; /* Define two columns */
+    grid-template-areas:    "name socials" 
+                            "name bar-nav";
     justify-content: space-between; /* Space between items */
     align-items: center; /* Center items vertically */
     position: sticky; /* Sticky behavior */
@@ -147,4 +96,150 @@ img {
     color: white; /* Text color */
     padding: 10px 20px; /* Padding for spacing */
     z-index: 1000; /* Ensure it stays above other content */
+    min-height: auto; /* Allow height to adjust to content */
+}
+
+#content {
+	text-align: center;
+	background-color: var(--color5);
+	padding: 20px;
+	margin-top: 60px;
+	border-radius: 15px 50px 30px;
+	border: 2px solid var(--color4);
+	box-sizing: border-box;
+	max-width: 1440px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sticky-header {
+    display: grid;
+    grid-template-areas: 
+        "name socials"
+        "name nav";
+    grid-template-columns: 1fr auto; /* name takes up available space, socials takes auto width */
+    grid-template-rows: auto auto; /* adjust rows as needed */
+    position: sticky;
+    top: 0;
+    padding: 10px; /* add some padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional shadow for a sticky effect */
+    z-index: 10; /* keep it on top of other content */
+}
+
+.name {
+    grid-area: name;
+}
+
+.socials {
+    grid-area: socials;
+    display: flex; /* align social button */
+    align-items: center; /* center vertically */
+}
+
+nav a {
+    text-decoration: none;
+    color: black; /* link color */
+    transition: color 0.3s; /* smooth color transition */
+}
+
+nav a:hover {
+    color: blue; /* change color on hover */
+}
+
+/* Button styles */
+.icon-button {
+    display: inline-flex; /* Align items in a row */
+    align-items: center; /* Vertically center items */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Remove border */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Hover effect for buttons */
+.icon-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Icon styles */
+.icon {
+    width: 24px; /* Set icon width */
+    height: 24px; /* Set icon height */
+    fill: #007bff; /* Fill color for SVG icons */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border: 2px solid #007bff; /* Adds a blue border */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+    display: block; /* Prevents inline spacing issues */
+    margin: 20px auto; /* Centers the image horizontally with margin */
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Crop the image to fill the area */
+    border: 2px solid #007bff; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    max-width: 100%; /* Allow the image to scale down to fit the container */
+    height: auto; /* Maintain the aspect ratio */
+    width: auto; /* Allow the image to maintain its original size */
+    border: 2px solid #007bff; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+.double_column {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically center items */
+    justify-content:center; /* Space between columns */
+    gap: 20px; /* Optional: space between items */
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px 20px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    color: #fff;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
 }

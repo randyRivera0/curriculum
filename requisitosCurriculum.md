@@ -31,4 +31,4 @@ Demuestra completamente que ha escogido colores de fondo, color de texto, famili
 ## Ideas
 - Foto de ig de flisol
 - Enlaces a github con fotos
-
+- qs latin america

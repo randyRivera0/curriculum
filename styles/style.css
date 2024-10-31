@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1a1a1a; /* Dark background */
     color: #e0e0e0; /* Light text color */
@@ -11,62 +12,6 @@ body {
 
 h1 {
     font-weight: bold;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.project-item {
-    background-color: #2a2a2a; /* Dark background for project items */
-    border: 1px solid blue; /* Blue border */
-    border-radius: 5px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.project-item img:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
-}
-
-.project-item h3 {
-    padding: 10px;
-    font-size: 1.2em;
-}
-
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid blue; /* Blue border */
-    border-radius: 5px;
-    background-color: #1a1a1a; /* Dark input background */
-    color: #e0e0e0; /* Light text color */
-}
-
-input[type="submit"] {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: blue; /* Blue button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: darkblue; /* Darker blue on hover */
 }
 
 #img_me {
@@ -81,50 +26,25 @@ img {
     max-width: 100%; /* Ensure the image is responsive */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
+    border: 2px solid #007bff; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+    margin: 20px auto; /* Centers the image horizontally */
 }
 
 .sticky-header {
-    display: grid; /* Enable Flexbox */
-    grid-template-columns: auto 1fr; /* Define two columns */
-    grid-template-areas:    "name socials" 
-                            "name bar-nav";
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
+    display: grid;
+    grid-template-columns: 1fr auto; /* Name takes up available space, socials takes auto width */
+    grid-template-areas: 
+        "name socials"
+        "name nav";
     position: sticky; /* Sticky behavior */
     top: 0; /* Stick to the top */
     background-color: #333; /* Header background color */
     color: white; /* Text color */
     padding: 10px 20px; /* Padding for spacing */
     z-index: 1000; /* Ensure it stays above other content */
-    min-height: auto; /* Allow height to adjust to content */
-}
-
-#content {
-	text-align: center;
-	background-color: var(--color5);
-	padding: 20px;
-	margin-top: 60px;
-	border-radius: 15px 50px 30px;
-	border: 2px solid var(--color4);
-	box-sizing: border-box;
-	max-width: 1440px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.sticky-header {
-    display: grid;
-    grid-template-areas: 
-        "name socials"
-        "name nav";
-    grid-template-columns: 1fr auto; /* name takes up available space, socials takes auto width */
-    grid-template-rows: auto auto; /* adjust rows as needed */
-    position: sticky;
-    top: 0;
-    padding: 10px; /* add some padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional shadow for a sticky effect */
-    z-index: 10; /* keep it on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a sticky effect */
 }
 
 .name {
@@ -133,18 +53,18 @@ img {
 
 .socials {
     grid-area: socials;
-    display: flex; /* align social button */
-    align-items: center; /* center vertically */
+    display: flex; /* Align social buttons */
+    align-items: center; /* Center vertically */
 }
 
 nav a {
     text-decoration: none;
-    color: black; /* link color */
-    transition: color 0.3s; /* smooth color transition */
+    color: black; /* Link color */
+    transition: color 0.3s; /* Smooth color transition */
 }
 
 nav a:hover {
-    color: blue; /* change color on hover */
+    color: blue; /* Change color on hover */
 }
 
 /* Button styles */
@@ -164,201 +84,23 @@ nav a:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Icon styles */
-.icon {
-    width: 24px; /* Set icon width */
-    height: 24px; /* Set icon height */
-    fill: #007bff; /* Fill color for SVG icons */
-    margin-right: 8px; /* Space between icon and text */
-}
-
-img {
-    width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains aspect ratio */
-    border: 2px solid #007bff; /* Adds a blue border */
-    border-radius: 10px; /* Rounds the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
-    display: block; /* Prevents inline spacing issues */
-    margin: 20px auto; /* Centers the image horizontally with margin */
-    width: 300px; /* Fixed width */
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Crop the image to fill the area */
-    border: 2px solid #007bff; /* Optional border */
-    border-radius: 10px; /* Optional rounded corners */
-    max-width: 100%; /* Allow the image to scale down to fit the container */
-    height: auto; /* Maintain the aspect ratio */
-    width: auto; /* Allow the image to maintain its original size */
-    border: 2px solid #007bff; /* Optional border */
-    border-radius: 10px; /* Optional rounded corners */
-}
-
 .double_column {
     display: flex;
     flex-direction: row;
     align-items: center; /* Vertically center items */
-    justify-content:center; /* Space between columns */
-    gap: 20px; /* Optional: space between items */
-
+    justify-content: center; /* Center content */
+    gap: 20px; /* Space between items */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    background-color: #333;
-    padding: 15px 20px;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-links a:hover {
-    background-color: #555;
-    color: #fff;
-    border-radius: 4px;
-}
-
-@media (max-width: 600px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.article-container {
-	background-color: var(--color5);
-	border: 1px solid var(--color1);
-	border-radius: 8px;
-	padding: 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s, box-shadow 0.3s;
-	/* transition: transform 0.3s, box-shadow 0.3s; */
-}
-
-.article-container img {
-	width: 100%;
-	height: 300px;
-	display: block;
-	object-fit: cover;
-    width: 100%;
-	height: 250px;
-	border-radius: 8px;
-}
-
-.container-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.article-container {
+#content {
+    text-align: center;
     background-color: var(--color5);
-    border: 1px solid var(--color1);
-    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    transition: transform 0.3s, box-shadow 0.3s;
-    
-}
-
-
-
-.article-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.article-container header h3 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-    text-align: center;
-    color: var(--color1);
-}
-
-.article-container figure {
-    margin: 0 0 10px;
-}
-
-.article-container figure figcaption {
-    text-align: center;
-    color: var(--color3);
-    font-weight: bold;
-    font-style: italic;
-}
-.article-container img {
+    margin-top: 60px;
+    border-radius: 15px 50px 30px;
+    border: 2px solid var(--color4);
+    max-width: 1440px;
     width: 100%;
-    height: 250px;
-    border-radius: 8px;
-}
-
-.article-container p {
-    font-size: 1em;
-    margin: 0 0 10px;
-    text-align: justify;
-}
-
-.article-container a {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 1em;
-    color: var(--color5);
-    background-color:var(--color3);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-    text-align: center;
-    text-decoration: none; 
-}
-
-.article-container a:hover {
-    background-color: var(--color4);
-   
-}
-.footer-project > p {
-    margin-top: 10px;
-    margin-bottom: 0px;
-  
-    text-align: center;
-}
-
-#projects h2 {
-    margin-top: 30px;
-    text-align: center; 
-    color: var(--color4);
-}
-
-.education-content{ 
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-}
-
-.education-img {
-    display: flex;
-    flex-direction: column;
-    max-height: 200px;
-    width: 300px; /* Desired width */
-    height: 200px; /* Desired height */
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: row;
     align-content: space-around;
+    
 }
 
 .education-img {
     display: flex;
     flex-direction: column;
     max-height: 200px;
-    width: 300px; /* Desired width */
     height: 200px; /* Desired height */
+    overflow: auto;
 }

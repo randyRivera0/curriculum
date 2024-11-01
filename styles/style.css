@@ -112,3 +112,18 @@ nav a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.circular-image-container {
+    overflow: hidden; /* Hide overflow */
+    border-radius: 50%; /* Makes the container circular */
+    display: flex; /* Centering image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.circular-image {
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the container */
+}

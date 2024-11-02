@@ -1,0 +1,17 @@
+.shining-line {
+    width: 100%; /* Full width */
+    height: 8px; /* Increased height for a thicker line */
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
+    background-size: 300%; /* Make the background larger for animation */
+    animation: shine 2s linear infinite; /* Animation for the shine effect */
+    margin: 20px 0; /* Space above and below the line */
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0%; /* Start at the left */
+    }
+    100% {
+        background-position: 100%; /* Move to the right */
+    }
+}

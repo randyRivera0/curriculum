@@ -1,6 +1,5 @@
 * {
-    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
-    background-color: rgba(255, 255, 255, 0); /* Fully transparent */    
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
     margin: 5px;
     padding: 5px;    
 }
@@ -15,6 +14,67 @@ body {
 
 h1 {
     font-weight: bold;
+}
+
+h2 {
+    position: relative; /* Needed for the sparkle effect */
+    font-family: 'Arial', sans-serif; /* Simple and clean font */
+    font-size: 3.5em; /* Large font size */
+    color: white; /* Default text color */
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add some padding */
+    letter-spacing: 1px; /* Slightly increase letter spacing */
+    opacity: 0; /* Start hidden for entrance animation */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.5s ease; /* Smooth transitions */
+    animation: fadeIn 1s forwards; /* Animation for fading in */
+}
+
+h2:hover {
+    color: gold; /* Change to gold on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(-20px); /* Slide in from above */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End in original position */
+    }
+}
+
+/* Sparkle effect */
+h2::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    left: 50%; /* Center it */
+    top: 50%; /* Center it */
+    width: 300%; /* Larger than text to ensure coverage */
+    height: 300%; /* Larger than text to ensure coverage */
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 10%, transparent 10%) 0 0;
+    background-size: 10px 10px; /* Size of the sparkles */
+    pointer-events: none; /* Prevents interaction */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+    transform: translate(-50%, -50%); /* Center the sparkles */
+}
+
+h2:hover::after {
+    opacity: 1; /* Show sparks on hover */
+    animation: sparkle 1s infinite; /* Animate the sparkle effect */
+}
+
+@keyframes sparkle {
+    0% {
+        background-position: 0 0; /* Start position */
+    }
+    100% {
+        background-position: 100% 100%; /* End position */
+    }
 }
 
 #img_me {
@@ -44,9 +104,9 @@ img {
     top: 0; /* Stick to the top */
     background-color: #333; /* Header background color */
     color: white; /* Text color */
-    padding: 10px 20px; /* Padding for spacing */
+    padding: 5px; /* Padding for spacing */
     z-index: 1000; /* Ensure it stays above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for a sticky effect */
+    box-shadow: 2px rgba(0, 0, 0, 0.1); /* Optional shadow for a sticky effect */
 }
 
 .name {
@@ -83,11 +143,8 @@ nav a:hover {
     min-width: 50px; /* Minimum width */
     min-height: 50px; /* Minimum height */
     object-fit: contain; /* Maintains aspect ratio */
-    
-    
 }
 
-/* Hover effect for buttons */
 .icon-button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
@@ -126,4 +183,8 @@ nav a:hover {
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures the image covers the container */
+}
+
+html {
+    scroll-behavior: smooth;
 }

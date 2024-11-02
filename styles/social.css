@@ -1,0 +1,78 @@
+.socials {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Stack items vertically */
+    align-items: center; /* Center align items */
+}
+
+
+.name {
+    text-align: center; /* Center the name and description */
+}
+
+.socials {
+    text-align: center; /* Center the heading and links */
+    margin: 20px 0; /* Add some margin */
+}
+
+.socials h4 {
+    font-size: 1.5em; /* Increase font size for the heading */
+    color: white; /* Set heading color */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+.social-links {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Space between icons */
+}
+
+.social-links a {
+    display: inline-block; /* Inline block for better spacing */
+    width: 50px; /* Set a width for the icons */
+    height: 50px; /* Set a height for the icons */
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for contrast */
+    border-radius: 50%; /* Make the background circular */
+    padding: 10px; /* Add some padding */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.social-links a:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+    background-color: rgba(255, 215, 0, 0.2); /* Change background to a goldish hue */
+}
+
+.social-links svg {
+    width: 100%; /* Make the SVG fill the anchor */
+    height: 100%; /* Make the SVG fill the anchor */
+    stroke: white; /* Set default stroke color to white */
+    transition: stroke 0.3s ease; /* Smooth transition for stroke color */
+}
+
+.social-links a:hover svg {
+    stroke: gold; /* Change stroke color to gold on hover */
+}
+
+.navbar {
+    margin-top: 20px; /* Add space between the socials and the navbar */
+}
+
+.nav-links {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the nav items */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between nav items */
+}
+
+.nav-links a {
+    color: white; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-links a:hover {
+    color: gold; /* Change color on hover */
+}
